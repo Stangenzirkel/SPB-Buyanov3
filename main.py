@@ -109,6 +109,7 @@ class EditItemForm(QMainWindow):
     def load_info(self):
         result = list(self.parent().con.execute('SELECT * FROM coffee WHERE id = ?', (self.id,)))[0]
         result = list(map(str, result))
+
         self.lineEdit.setText(result[1])
         self.lineEdit_2.setText(result[2])
         self.lineEdit_4.setText(result[4])
